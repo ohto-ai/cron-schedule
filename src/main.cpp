@@ -1,5 +1,6 @@
 #include <iostream>
 #include <version.h>
+#include <cron-schedule/cron-schedule.hpp>
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
@@ -12,5 +13,6 @@ int main() {
     std::cout << "BuildDate: " << VersionHelper::getInstance().BuildDate << std::endl;
     std::cout << "BuildTime: " << VersionHelper::getInstance().BuildTime << std::endl;
     std::cout << "IsDevVersion: " << VersionHelper::getInstance().IsDevVersion << std::endl;
+    std::cout << typeid(ohtoai::cron_schedule::cron_schedule).name() << std::endl;
     return 0;
 }

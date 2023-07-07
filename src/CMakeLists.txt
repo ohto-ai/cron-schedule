@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.11)
 include(../cmake/version_from_git_tag.cmake)
 
 # set the project name and version
-project(cmake-project-template LANGUAGES CXX VERSION ${BUILD_VERSION_MAJOR}.${BUILD_VERSION_MINOR}.${BUILD_VERSION_PATCH})
+project(cron-schedule LANGUAGES CXX VERSION ${BUILD_VERSION_MAJOR}.${BUILD_VERSION_MINOR}.${BUILD_VERSION_PATCH})
 
 # set c++ version
 set(CMAKE_CXX_STANDARD 11)
@@ -12,9 +12,9 @@ set(CMAKE_CXX_STANDARD 11)
 # set project maintainer and contact
 set(PROJECT_MAINTAINER "OhtoAi")
 set(PROJECT_CONTACT "zhu.thatboy@outlook.com")
-set(PROJECT_DESCRIPTION "A cmake project template")
+set(PROJECT_DESCRIPTION "A header-only cross-platform scheduling library for C++, using cron expressions.")
 set(PROJECT_DEBIAN_DEPENDENCIES "libssl1.1 (>= 1.1.0)")
-set(PROJECT_HOMEPAGE "https://github.com/Ohto-Ai/CMakeProjectTemplate/")
+set(PROJECT_HOMEPAGE "https://github.com/ohto-ai/cron-schedule")
 set(${PROJECT_NAME}_REQUIRE_OPENSSL FALSE)
 set(${PROJECT_NAME}_USE_OPENSSL_IF_AVAILABLE TRUE)
 
@@ -82,10 +82,3 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 target_compile_definitions(${PROJECT_NAME} PRIVATE
 	$<$<BOOL:${${PROJECT_NAME}_REQUIRE_OPENSSL}>:CPPHTTPLIB_OPENSSL_SUPPORT>
 )
-
-install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
-
-# set install target
-if(LINUX OR WINDOWS)
-    include(../cmake/package.cmake)
-endif()
