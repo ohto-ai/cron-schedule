@@ -32,7 +32,7 @@ namespace ohtoai{
             /// @param task_name The taks name. e.g. "myTask"
             /// @param cron The cron schedule. e.g. "0 0 0 * * *"
             /// @param callback The callback function.
-            void add_task(const std::string& task_name, const cronexpr& cron, std::function<void(cron_task& )> callback);
+            void add_task(const std::string& task_name, const cron::cronexpr& cron, std::function<void(cron_task& )> callback);
 
         private: // member variables
             // todo: add member variables here.
