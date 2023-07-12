@@ -13,5 +13,4 @@ set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR})
 include_directories(${PROJECT_SOURCE_DIR}/inc)
 
 # set the output directory for the build executables and libraries
-add_subdirectory(src)
 add_subdirectory(test)
